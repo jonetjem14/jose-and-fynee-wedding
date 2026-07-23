@@ -1,1 +1,0 @@
-# jose-and-fynee-wedding
