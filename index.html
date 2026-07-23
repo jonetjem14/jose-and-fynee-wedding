@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jose Ernesto & Fynee - Our Story</title>
+    <title>Jose Ernesto & Fynee - Our Wedding</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -16,11 +16,12 @@
 
         :root {
             --primary: #d4af37;
-            --secondary: #8b7355;
+            --secondary: #8b3a3a;
             --dark: #1a1a1a;
             --light: #f5f5f0;
             --white: #ffffff;
             --text: #333;
+            --maroon: #7d1d1d;
         }
 
         html {
@@ -43,7 +44,7 @@
             right: 0;
             z-index: 1000;
             padding: 1.5rem 2rem;
-            background: rgba(26, 26, 26, 0.7);
+            background: rgba(26, 26, 26, 0.95);
             backdrop-filter: blur(10px);
         }
 
@@ -76,75 +77,100 @@
             height: 100vh;
             display: flex;
             align-items: center;
+            justify-content: space-between;
+            overflow: hidden;
+            background: var(--white);
+            padding-top: 60px;
+        }
+
+        .hero-left {
+            flex: 1;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero-left::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+        }
+
+        .hero-right {
+            flex: 1;
+            height: 100%;
+            background: linear-gradient(135deg, #7d1d1d 0%, #a63737 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
+            padding: 3rem;
+            text-align: center;
+            color: var(--white);
+            position: relative;
             overflow: hidden;
         }
 
-        .hero-video {
+        .hero-right::before {
+            content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
         }
 
-        .hero-overlay {
+        .hero-right::after {
+            content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(26, 26, 26, 0.4) 0%, rgba(26, 26, 26, 0.2) 100%);
-            z-index: 1;
+            bottom: -50%;
+            left: -5%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            text-align: center;
-            color: var(--white);
             animation: fadeInUp 1s ease 0.3s both;
         }
 
-        .hero-content h2 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 300;
-            letter-spacing: 3px;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
+        .hero-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
         }
 
         .hero-content h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 5rem;
-            font-weight: 400;
-            margin: 0.5rem 0;
-            letter-spacing: 2px;
-        }
-
-        .ampersand {
-            font-size: 3rem;
-            color: var(--primary);
-            display: block;
+            font-size: 2.5rem;
             margin: 1rem 0;
+            letter-spacing: 1px;
         }
 
         .hero-content p {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.3rem;
-            margin: 2rem 0;
-            letter-spacing: 2px;
+            font-size: 1.1rem;
+            margin: 1.5rem 0;
+            letter-spacing: 1px;
         }
 
         .countdown {
             display: flex;
-            gap: 2rem;
+            gap: 1rem;
             justify-content: center;
-            margin: 3rem 0;
+            margin: 2rem 0;
             font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
         }
 
         .countdown-item {
@@ -152,34 +178,29 @@
         }
 
         .countdown-number {
-            font-size: 2.5rem;
+            font-size: 1.5rem;
             font-weight: 600;
             color: var(--primary);
         }
 
-        .countdown-label {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .hero-button {
+        .rsvp-button {
             display: inline-block;
-            margin-top: 2rem;
-            padding: 1rem 3rem;
+            margin-top: 1.5rem;
+            padding: 0.8rem 2rem;
             border: 2px solid var(--primary);
             color: var(--primary);
             text-decoration: none;
             font-family: 'Poppins', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             letter-spacing: 2px;
             text-transform: uppercase;
             transition: all 0.3s ease;
+            border-radius: 25px;
         }
 
-        .hero-button:hover {
+        .rsvp-button:hover {
             background: var(--primary);
-            color: var(--dark);
+            color: var(--maroon);
         }
 
         /* Reveal Animation */
@@ -196,7 +217,7 @@
 
         /* Section Styling */
         section {
-            padding: 100px 2rem;
+            padding: 80px 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -215,19 +236,32 @@
             color: var(--secondary);
         }
 
-        /* Intro Section */
-        .intro {
+        /* Our Story Section */
+        .story {
             background: var(--light);
-            text-align: center;
         }
 
-        .intro p {
-            font-size: 1.3rem;
-            color: var(--text);
-            margin: 2rem 0;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .story-content h3 {
+            font-size: 1.5rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .story-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            line-height: 2;
+            color: #555;
+        }
+
+        .story-content strong {
+            color: var(--secondary);
         }
 
         /* Timeline Section */
@@ -237,381 +271,355 @@
 
         .timeline-container {
             position: relative;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
-        .timeline-container::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 3px;
-            height: 100%;
-            background: var(--primary);
-            top: 0;
-        }
-
         .timeline-item {
-            margin-bottom: 4rem;
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
             opacity: 0;
             transform: translateX(50px);
-            animation: none;
         }
 
         .timeline-item.reveal.active {
             animation: slideInRight 0.8s ease forwards;
         }
 
-        .timeline-item:nth-child(odd) {
-            margin-left: 0;
-            text-align: right;
-            padding-right: 52%;
-        }
-
-        .timeline-item:nth-child(even) {
-            margin-left: 52%;
-            text-align: left;
-            padding-left: 2rem;
-        }
-
-        .timeline-icon {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 50px;
-            background: var(--white);
-            border: 3px solid var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            z-index: 10;
-        }
-
-        .timeline-content {
-            background: rgba(212, 175, 55, 0.05);
-            padding: 2rem;
-            border-radius: 10px;
+        .timeline-time {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--secondary);
+            font-size: 0.95rem;
         }
 
         .timeline-content h4 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
             color: var(--secondary);
+            margin-bottom: 0.5rem;
         }
 
         .timeline-content p {
             color: #666;
             font-size: 0.95rem;
+            margin-bottom: 0.5rem;
         }
 
-        /* Bible Verse Section */
-        .verse {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 115, 85, 0.1) 100%);
-            text-align: center;
-            padding: 80px 2rem;
-        }
-
-        .verse-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 3rem;
-            border-radius: 15px;
-            max-width: 700px;
-            margin: 0 auto;
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
-        }
-
-        .verse-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
-            font-style: italic;
-            line-height: 2;
-        }
-
-        .verse-reference {
+        .timeline-dress {
             font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
+            font-size: 0.85rem;
             color: var(--primary);
             font-weight: 600;
-            letter-spacing: 1px;
+            margin-top: 0.5rem;
         }
 
-        /* Story Section */
-        .story {
+        .add-calendar {
+            display: inline-block;
+            margin-top: 0.8rem;
+            padding: 0.5rem 1rem;
+            background: var(--primary);
+            color: var(--secondary);
+            text-decoration: none;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .add-calendar:hover {
+            background: var(--secondary);
+            color: var(--white);
+        }
+
+        /* Accommodations Section */
+        .accommodations {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 58, 58, 0.1) 100%);
+        }
+
+        .hotel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .hotel-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid var(--primary);
+        }
+
+        .hotel-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .hotel-distance {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .hotel-price {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+            color: #666;
+        }
+
+        .hotel-card p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .book-button {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            background: var(--secondary);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .book-button:hover {
+            background: var(--primary);
+            color: var(--secondary);
+        }
+
+        /* Neighborhoods Section */
+        .neighborhoods {
             background: var(--white);
         }
 
-        .story-chapters {
+        .neighborhood-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .chapter-card {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 115, 85, 0.1) 100%);
-            padding: 2.5rem;
-            border-radius: 15px;
-            text-align: center;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-
-        .chapter-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .chapter-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .chapter-card h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-        }
-
-        .chapter-card p {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        /* Love Letter Section */
-        .letter {
-            background: linear-gradient(135deg, var(--light) 0%, rgba(212, 175, 55, 0.05) 100%);
-        }
-
-        .letter-content {
-            max-width: 700px;
-            margin: 0 auto;
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            font-family: 'Lora', serif;
-            font-size: 1.1rem;
-            line-height: 2;
-            color: #333;
-        }
-
-        .letter-salutation {
-            font-style: italic;
-            margin-bottom: 2rem;
-            color: var(--secondary);
-        }
-
-        .letter-signature {
-            margin-top: 3rem;
-            text-align: right;
-            font-style: italic;
-        }
-
-        .love-heart {
-            text-align: center;
-            font-size: 2rem;
-            margin: 1rem 0;
-        }
-
-        /* Gallery Section */
-        .gallery {
-            background: var(--white);
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            aspect-ratio: 1;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            border-radius: 10px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-
-        .gallery-item::after {
-            content: '+';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 3rem;
-            color: var(--white);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .gallery-item:hover::after {
-            opacity: 1;
-        }
-
-        /* Wedding Timeline Section */
-        .wedding-schedule {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(139, 115, 85, 0.05) 100%);
-        }
-
-        .schedule-item {
-            display: flex;
-            align-items: center;
-            margin: 2rem 0;
-            padding: 1.5rem;
-            background: var(--white);
+        .neighborhood-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 58, 58, 0.08) 100%);
+            padding: 2rem;
             border-radius: 10px;
             border-left: 4px solid var(--primary);
         }
 
-        .schedule-time {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--primary);
-            min-width: 120px;
-        }
-
-        .schedule-event {
-            margin-left: 2rem;
-            flex: 1;
-        }
-
-        .schedule-event h4 {
+        .neighborhood-card h4 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--secondary);
             margin-bottom: 0.5rem;
         }
 
-        .schedule-event p {
+        .neighborhood-card .distance {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .neighborhood-card p {
             color: #666;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
         }
 
-        /* Guest Count Section */
-        .guest-count {
+        /* Venue & Directions */
+        .venue {
+            background: linear-gradient(135deg, var(--light) 0%, rgba(212, 175, 55, 0.05) 100%);
+        }
+
+        .venue-card {
             background: var(--white);
-            text-align: center;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .count-items {
+        .venue-card h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        .venue-info {
+            margin: 2rem 0;
+        }
+
+        .venue-info h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .venue-info p {
+            color: #666;
+            margin-bottom: 0.8rem;
+        }
+
+        .venue-info a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .venue-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        /* Weather & Dress Code */
+        .weather {
+            background: var(--white);
+        }
+
+        .weather-card {
+            background: linear-gradient(135deg, rgba(125, 29, 29, 0.1) 0%, rgba(212, 175, 55, 0.1) 100%);
+            padding: 2.5rem;
+            border-radius: 10px;
+            max-width: 700px;
+            margin: 2rem auto;
+            border-left: 4px solid var(--primary);
+        }
+
+        .weather-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .weather-card p {
+            color: #666;
+            margin-bottom: 0.8rem;
+            line-height: 1.8;
+        }
+
+        /* Wedding Party */
+        .wedding-party {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(139, 58, 58, 0.05) 100%);
+        }
+
+        .party-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .count-item {
-            padding: 2rem;
-        }
-
-        .count-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            color: var(--primary);
-            font-weight: bold;
-        }
-
-        .count-label {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.1rem;
-            color: var(--secondary);
-            margin-top: 0.5rem;
-        }
-
-        .count-heart {
-            font-size: 2rem;
-            margin-top: 1rem;
-        }
-
-        /* Location Section */
-        .location {
-            background: linear-gradient(135deg, var(--light) 0%, rgba(212, 175, 55, 0.05) 100%);
-        }
-
-        .location-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        .party-member {
             text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 10px;
+            border-top: 3px solid var(--primary);
         }
 
-        .location-name {
-            font-family: 'Playfair Display', serif;
+        .party-avatar {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 2rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-        }
-
-        .location-address {
-            color: #666;
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-
-        .map-button {
-            display: inline-block;
-            padding: 0.8rem 2rem;
-            background: var(--primary);
-            color: var(--dark);
-            text-decoration: none;
-            border-radius: 5px;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-        }
-
-        .map-button:hover {
-            background: var(--secondary);
             color: var(--white);
         }
 
-        /* Music Player */
-        .music-player {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: rgba(26, 26, 26, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 1rem;
-            border-radius: 50px;
-            z-index: 999;
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .party-member h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--secondary);
+            margin-bottom: 0.3rem;
         }
 
-        .music-player:hover {
-            background: rgba(212, 175, 55, 0.9);
-        }
-
-        .music-icon {
-            font-size: 1.5rem;
+        .party-role {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
             color: var(--primary);
+            font-weight: 600;
         }
 
-        .music-player:hover .music-icon {
-            color: var(--dark);
+        /* Q&A Section */
+        .qa {
+            background: var(--white);
+        }
+
+        .qa-item {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+            opacity: 0;
+            transform: translateX(30px);
+        }
+
+        .qa-item.reveal.active {
+            animation: slideInRight 0.8s ease forwards;
+        }
+
+        .qa-item h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 0.8rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .qa-toggle {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .qa-toggle.active {
+            transform: rotate(180deg);
+        }
+
+        .qa-answer {
+            color: #666;
+            display: none;
+            margin-top: 1rem;
+            line-height: 1.8;
+        }
+
+        .qa-answer.active {
+            display: block;
         }
 
         /* Closing Section */
@@ -631,32 +639,6 @@
             font-size: 1.2rem;
             line-height: 2;
             margin: 1rem 0;
-        }
-
-        .closing-signature {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            margin-top: 3rem;
-            color: var(--primary);
-        }
-
-        .rsvp-link {
-            display: inline-block;
-            margin-top: 2rem;
-            padding: 1rem 3rem;
-            background: var(--primary);
-            color: var(--dark);
-            text-decoration: none;
-            border-radius: 5px;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-        }
-
-        .rsvp-link:hover {
-            background: var(--white);
-            transform: scale(1.05);
         }
 
         /* Footer */
@@ -683,7 +665,7 @@
         @keyframes slideInRight {
             from {
                 opacity: 0;
-                transform: translateX(50px);
+                transform: translateX(30px);
             }
             to {
                 opacity: 1;
@@ -691,73 +673,66 @@
             }
         }
 
-        @keyframes countUp {
-            from {
-                opacity: 0;
+        /* Responsive */
+        @media (max-width: 1024px) {
+            #hero {
+                flex-direction: column;
+                height: auto;
+                min-height: 100vh;
             }
-            to {
-                opacity: 1;
+
+            .hero-left {
+                min-height: 400px;
+            }
+
+            .hero-right {
+                padding: 2rem;
+                min-height: 400px;
             }
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             nav ul {
                 gap: 1.5rem;
-            }
-
-            .hero-content h1 {
-                font-size: 3rem;
-            }
-
-            .ampersand {
-                font-size: 2rem;
             }
 
             h2 {
                 font-size: 2.2rem;
             }
 
-            .timeline-container::before {
-                left: 25px;
-            }
-
-            .timeline-item,
-            .timeline-item:nth-child(odd),
-            .timeline-item:nth-child(even) {
-                margin-left: 0;
-                padding-left: 80px;
-                padding-right: 0;
-                text-align: left;
-            }
-
-            .timeline-icon {
-                left: 0;
-            }
-
-            .countdown {
-                gap: 1rem;
-            }
-
-            .countdown-number {
-                font-size: 1.8rem;
-            }
-
-            .countdown-label {
-                font-size: 0.7rem;
-            }
-
-            .verse-text {
-                font-size: 1.3rem;
-            }
-
-            .music-player {
-                bottom: 1rem;
-                right: 1rem;
+            h3 {
+                font-size: 1.5rem;
             }
 
             section {
                 padding: 60px 1.5rem;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .hotel-grid,
+            .neighborhood-grid,
+            .party-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-right {
+                padding: 1.5rem;
+            }
+
+            .countdown {
+                gap: 0.5rem;
+            }
+
+            .countdown-number {
+                font-size: 1.2rem;
+            }
+
+            .countdown-label {
+                font-size: 0.6rem;
             }
         }
     </style>
@@ -768,287 +743,493 @@
         <ul>
             <li><a href="#hero">Home</a></li>
             <li><a href="#story">Our Story</a></li>
-            <li><a href="#timeline">Timeline</a></li>
-            <li><a href="#gallery">Gallery</a></li>
             <li><a href="#schedule">Schedule</a></li>
-            <li><a href="#location">Location</a></li>
+            <li><a href="#venue">Venue</a></li>
+            <li><a href="#party">Wedding Party</a></li>
+            <li><a href="#qa">Q&A</a></li>
         </ul>
     </nav>
 
     <!-- Hero Section -->
     <section id="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content reveal">
-            <h2>Together with our families</h2>
-            <h1>Jose Ernesto</h1>
-            <span class="ampersand">&</span>
-            <h1>Fynee</h1>
-            <p>September 19, 2026</p>
-            
-            <div class="countdown">
-                <div class="countdown-item">
-                    <div class="countdown-number" id="days">0</div>
-                    <div class="countdown-label">Days</div>
+        <div class="hero-left" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=1000&fit=crop'); background-size: cover; background-position: center;"></div>
+        <div class="hero-right">
+            <div class="hero-content reveal">
+                <div class="hero-icon">🌸</div>
+                <h1>Jose Ernesto & Fynee</h1>
+                <p>Saturday, September 19, 2026</p>
+                <p style="font-size: 1rem; opacity: 0.9;">Hotel Supreme, Baguio</p>
+                
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="days">0</div>
+                        <div style="font-size: 0.7rem;">Days</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="hours">0</div>
+                        <div style="font-size: 0.7rem;">Hours</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="minutes">0</div>
+                        <div style="font-size: 0.7rem;">Mins</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="seconds">0</div>
+                        <div style="font-size: 0.7rem;">Secs</div>
+                    </div>
                 </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="hours">0</div>
-                    <div class="countdown-label">Hours</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="minutes">0</div>
-                    <div class="countdown-label">Minutes</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="seconds">0</div>
-                    <div class="countdown-label">Seconds</div>
-                </div>
-            </div>
 
-            <a href="#story" class="hero-button">Our Story</a>
-        </div>
-    </section>
+                <p style="font-size: 0.95rem; margin-top: 1.5rem; line-height: 1.6;">We're so excited to celebrate our big day with you in Baguio. Help us capture every moment with joy.</p>
 
-    <!-- Intro Section -->
-    <section class="intro reveal">
-        <h2>A Beautiful Beginning</h2>
-        <p>
-            When two souls find each other through God's perfect timing, it's not just love—it's a divine connection.
-            This is our story of faith, friendship, and forever.
-        </p>
-    </section>
-
-    <!-- Timeline Section -->
-    <section id="timeline" class="timeline">
-        <h2>Our Journey</h2>
-        <div class="timeline-container">
-            <div class="timeline-item reveal">
-                <div class="timeline-icon">💬</div>
-                <div class="timeline-content">
-                    <h4>First Conversation</h4>
-                    <p>Where everything began with unexpected words and a spark of connection.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item reveal">
-                <div class="timeline-icon">☕</div>
-                <div class="timeline-content">
-                    <h4>First Date</h4>
-                    <p>Simple moments that turned into memories we'd never forget.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item reveal">
-                <div class="timeline-icon">💍</div>
-                <div class="timeline-content">
-                    <h4>The Proposal</h4>
-                    <p>On one magical evening, forever was finally asked for and freely given.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item reveal">
-                <div class="timeline-icon">🙏</div>
-                <div class="timeline-content">
-                    <h4>Growing Together</h4>
-                    <p>Through prayer and patience, learning what it means to be one.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item reveal">
-                <div class="timeline-icon">💒</div>
-                <div class="timeline-content">
-                    <h4>Our Wedding Day</h4>
-                    <p>September 19, 2026 — The beginning of our forever.</p>
-                </div>
+                <a href="https://withjoy.com/joseernesto-and-fynee/" target="_blank" class="rsvp-button">RSVP</a>
             </div>
         </div>
     </section>
 
-    <!-- Bible Verse Section -->
-    <section class="verse reveal">
-        <div class="verse-card">
-            <p class="verse-text">
-                "Though one may be overpowered, two can defend themselves. A cord of three strands is not quickly broken."
-            </p>
-            <p class="verse-reference">Ecclesiastes 4:9-10</p>
-        </div>
-    </section>
-
-    <!-- Story Section -->
+    <!-- Our Story Section -->
     <section id="story" class="story reveal">
         <h2>Our Story</h2>
         
-        <div class="story-chapters">
-            <div class="chapter-card reveal">
-                <div class="chapter-number">01</div>
-                <h4>When Our Paths Crossed</h4>
-                <p>Sometimes the best stories start unexpectedly. That's how we found each other.</p>
-            </div>
-
-            <div class="chapter-card reveal">
-                <div class="chapter-number">02</div>
-                <h4>Learning to Love</h4>
-                <p>With every conversation, every laugh, we discovered what love truly means.</p>
-            </div>
-
-            <div class="chapter-card reveal">
-                <div class="chapter-number">03</div>
-                <h4>God's Perfect Timing</h4>
-                <p>Faith brought us together at exactly the right moment in our lives.</p>
-            </div>
-
-            <div class="chapter-card reveal">
-                <div class="chapter-number">04</div>
-                <h4>Forever Begins</h4>
-                <p>And now, in front of God and our loved ones, we promise forever.</p>
-            </div>
-        </div>
-
-        <div style="margin-top: 80px; text-align: center;">
-            <p style="font-size: 1.2rem; color: #666; max-width: 700px; margin: 0 auto;">
-                Our love story is more than just two people—it's a testament to faith, patience, and the belief 
-                that God prepares the right person for the right moment. Every chapter has been a blessing.
-            </p>
-        </div>
-    </section>
-
-    <!-- Love Letter Section -->
-    <section class="letter reveal">
-        <h2>A Letter</h2>
-        <div class="letter-content">
-            <p class="letter-salutation">My Dearest Fynee,</p>
-
+        <div class="story-content">
             <p>
-                If someone told me years ago that God was preparing someone who would become 
-                my best friend, my greatest encouragement, and the love of my life, I would have 
-                wondered what path would lead me there.
+                Some love stories begin with grand plans. Ours began with two friends who simply believed we should meet.
             </p>
 
             <p>
-                But I would have never imagined it would be you.
+                Through our dear friends, Kael and Ritch, fate quietly introduced us to one another. We met for the very first time at Metro Central Mall in Sta. Cruz, Laguna. What was supposed to be a double date quickly turned into something much more special when our friends "unexpectedly" left us to spend the evening together.
             </p>
 
             <p>
-                Yet here we are, and everything makes sense now. Every moment before you was 
-                God preparing us both. Every challenge, every lesson, every experience—they all 
-                led us to this beautiful chapter of our story.
+                Our first stop was La Esperanza Cake House & Coffee Shop, where our very first conversation over coffee began. It wasn't exactly a perfect start. Jose realized he had forgotten to bring cash and only had online banking. As he hurried away to withdraw money, Fynee wondered if she had just been left behind. But true to his word, he came back, and together we laughed about what would become one of our favorite memories.
+            </p>
+
+            <h3>Who made the first move?</h3>
+            <p>
+                Jose did. After our very first date, he couldn't stop thinking about Fynee. The very next morning, he surprised her at her office with a bouquet of beautiful white flowers. With all of her coworkers happily teasing them, it was a moment neither of them would ever forget.
             </p>
 
             <p>
-                I cannot wait to spend the rest of my life discovering who we become together. 
-                To build a home filled with faith, laughter, and unconditional love. To face 
-                whatever comes with you by my side.
+                From that day on, one date turned into many, weekly meetups became something they both looked forward to, and before they knew it, friendship had blossomed into a love they knew was worth holding on to forever.
+            </p>
+
+            <h3>What's your most unforgettable date?</h3>
+            <p>
+                We've shared so many wonderful dates together, but nothing will ever compare to our very first one. From the moment we met, everything just felt right. There were butterflies, endless laughter, meaningful conversations, and a kind of peace that made us feel at home with each other.
             </p>
 
             <p>
-                You are God's greatest gift to me, and I will spend forever being grateful 
-                for the day our paths crossed.
+                That magical evening wasn't just our first date. It was the beginning of a beautiful love story. Looking back now, we truly believe it was the moment God started writing our forever. ❤️
             </p>
 
-            <div class="love-heart">💕</div>
+            <h3>What's your favorite thing to do together?</h3>
+            <p>
+                Our favorite thing is simply being together. Whether we're watching movies, going for walks or jogs, enjoying date nights, traveling, or discovering beautiful places, every moment becomes special because we're sharing it with each other.
+            </p>
 
-            <p class="letter-signature">
-                Forever yours,<br>
-                Jose Ernesto
+            <p>
+                Above all, the greatest joy we share is growing in our faith and serving the Lord Jesus Christ together. From joining church activities to lifting our voices in worship every Sunday, we pray that God will always remain at the center of our relationship and the foundation of our marriage. ❤️
+            </p>
+
+            <h3>Where are you going for your honeymoon?</h3>
+            <p>
+                Honestly, we're still deciding! Most likely, we'll stay somewhere here in the Philippines. But to us, the destination isn't what matters most. As long as we're together, making memories and enjoying each other's company, that's more than enough. After all, every place feels a little more beautiful when you're with the person you love. ❤️
+            </p>
+
+            <h3>What's the best meal you've shared together?</h3>
+            <p>
+                <strong>Pasta and Steak!</strong>
+            </p>
+
+            <h3>What's the most memorable trip you've taken together?</h3>
+            <p>
+                <strong>Last spring, we saw the cherry blossoms in Kyoto. It was unforgettable!</strong>
             </p>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery reveal">
-        <h2>Our Moments</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item reveal"></div>
-            <div class="gallery-item reveal"></div>
-            <div class="gallery-item reveal"></div>
-            <div class="gallery-item reveal"></div>
-            <div class="gallery-item reveal"></div>
-            <div class="gallery-item reveal"></div>
-            <div class="gallery-item reveal"></div>
-            <div class="gallery-item reveal"></div>
-        </div>
-    </section>
-
-    <!-- Wedding Schedule -->
-    <section id="schedule" class="wedding-schedule reveal">
-        <h2>Our Wedding Day</h2>
+    <!-- Schedule Section -->
+    <section id="schedule" class="timeline reveal">
+        <h2>Schedule</h2>
         
-        <div style="max-width: 700px; margin: 0 auto;">
-            <div class="schedule-item reveal">
-                <div class="schedule-time">9:00 AM</div>
-                <div class="schedule-event">
-                    <h4>Preparations Begin</h4>
-                    <p>Getting ready moments with family and loved ones</p>
+        <div class="timeline-container">
+            <div class="timeline-item reveal">
+                <div>
+                    <div class="timeline-time">Friday, September 18</div>
+                    <div class="timeline-time">4:00 PM – 5:00 PM</div>
+                </div>
+                <div class="timeline-content">
+                    <h4>Rehearsal</h4>
+                    <p>Hotel Supreme Convention Plaza</p>
+                    <p>Please join us for the rehearsal so you'll know exactly what to do and where to be on the big day!</p>
+                    <div class="timeline-dress">Cocktail Attire</div>
+                    <a href="#" class="add-calendar">Add to Calendar</a>
                 </div>
             </div>
 
-            <div class="schedule-item reveal">
-                <div class="schedule-time">4:00 PM</div>
-                <div class="schedule-event">
-                    <h4>Ceremony</h4>
-                    <p>Supreme Hotel • Baguio City</p>
+            <div class="timeline-item reveal">
+                <div>
+                    <div class="timeline-time">Friday, September 18</div>
+                    <div class="timeline-time">5:00 PM – 7:00 PM</div>
+                </div>
+                <div class="timeline-content">
+                    <h4>Rehearsal Dinner</h4>
+                    <p>Hotel Supreme Convention Plaza</p>
+                    <p>Let's kick off the wedding festivities with some of our favorite dishes at the rehearsal dinner.</p>
+                    <a href="#" class="add-calendar">Add to Calendar</a>
                 </div>
             </div>
 
-            <div class="schedule-item reveal">
-                <div class="schedule-time">5:30 PM</div>
-                <div class="schedule-event">
-                    <h4>Photo Session</h4>
-                    <p>Capturing our beautiful moments together</p>
+            <div class="timeline-item reveal">
+                <div>
+                    <div class="timeline-time">Saturday, September 19</div>
+                    <div class="timeline-time">2:30 PM – 4:00 PM</div>
+                </div>
+                <div class="timeline-content">
+                    <h4>Wedding Party Photoshoot 📷</h4>
+                    <p>Hotel Supreme Convention Plaza</p>
+                    <p>We'll be taking photos before the ceremony starts at 2:30 pm sharp. Please arrive at the venue and be ready for photos by then!</p>
+                    <a href="#" class="add-calendar">Add to Calendar</a>
                 </div>
             </div>
 
-            <div class="schedule-item reveal">
-                <div class="schedule-time">6:30 PM</div>
-                <div class="schedule-event">
-                    <h4>Reception</h4>
-                    <p>Dinner, celebrations, and dancing with loved ones</p>
+            <div class="timeline-item reveal">
+                <div>
+                    <div class="timeline-time">Saturday, September 19</div>
+                    <div class="timeline-time">4:00 PM – 10:00 PM</div>
+                </div>
+                <div class="timeline-content">
+                    <h4>Ceremony and Reception</h4>
+                    <p>Hotel Supreme Convention Plaza</p>
+                    <p>We're getting married! Join us for a garden celebration in Baguio with dinner, drinks, and dancing to follow.</p>
+                    <div class="timeline-dress">Cocktail Attire</div>
+                    <a href="#" class="add-calendar">Add to Calendar</a>
                 </div>
             </div>
 
-            <div class="schedule-item reveal">
-                <div class="schedule-time">10:00 PM</div>
-                <div class="schedule-event">
-                    <h4>Celebration Ends</h4>
-                    <p>Until we meet again</p>
+            <div class="timeline-item reveal">
+                <div>
+                    <div class="timeline-time">To Be Announced</div>
+                </div>
+                <div class="timeline-content">
+                    <h4>Post-Wedding Brunch 🥐🥓🥂</h4>
+                    <p>Sticking around an extra day? Join us for breakfast near Taal Vista Hotel! More details coming soon.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Guest Count -->
-    <section class="guest-count reveal">
-        <h2>Celebrating Together</h2>
-        <div class="count-items">
-            <div class="count-item reveal">
-                <div class="count-number" data-target="150">0</div>
-                <div class="count-label">Family Members</div>
-                <div class="count-heart">❤️</div>
+    <!-- Accommodations Section -->
+    <section class="accommodations reveal">
+        <h2>Where to Stay</h2>
+        
+        <p style="text-align: center; margin-bottom: 3rem; color: #666;">
+            To make planning easier, we've listed a few places to stay, including our reserved room block at Hotel Supreme. Rooms fill up quickly, especially on weekends. So if you're staying overnight, we recommend booking as soon as possible.
+        </p>
+
+        <div class="hotel-grid">
+            <div class="hotel-card reveal">
+                <h4>Hotel Supreme Convention Plaza</h4>
+                <div class="hotel-distance">📍 Our Venue</div>
+                <div class="hotel-price"><strong>₱2,491/night</strong> <span style="text-decoration: line-through; color: #999;">₱2,597</span></div>
+                <p>
+                    This hotel is in a fantastic location. The spacious rooms and friendly staff are perfect for a comfortable stay. Plus, the on-site amenities, like the pool and gym, are great for relaxing and staying active.
+                </p>
+                <a href="https://www.hotelsupreme.com.ph" target="_blank" class="book-button">Book Now</a>
             </div>
 
-            <div class="count-item reveal">
-                <div class="count-number" data-target="200">0</div>
-                <div class="count-label">Dear Friends</div>
-                <div class="count-heart">❤️</div>
-            </div>
-
-            <div class="count-item reveal">
-                <div class="count-number" data-target="350">0</div>
-                <div class="count-label">Loved Ones</div>
-                <div class="count-heart">❤️</div>
+            <div class="hotel-card reveal">
+                <h4>Reddoorz Hostel @ Baguio Piraso</h4>
+                <div class="hotel-distance">📍 0.6 km from venue</div>
+                <div class="hotel-price"><strong>₱1,079/night</strong> <span style="text-decoration: line-through; color: #999;">₱1,126</span></div>
+                <p>
+                    A budget-friendly option for those looking to explore beautiful Baguio. Its central location makes it easy to get around and the cozy, laid-back vibe of the hostel will make you feel right at home.
+                </p>
+                <a href="#" class="book-button">Book Now</a>
             </div>
         </div>
     </section>
 
-    <!-- Location Section -->
-    <section id="location" class="location reveal">
-        <h2>Where We'll Say "I Do"</h2>
-        <div class="location-card reveal">
-            <div class="location-name">📍 Supreme Hotel</div>
-            <div class="location-address">
-                Baguio City<br>
-                The perfect setting for our beautiful celebration
+    <!-- Neighborhoods Section -->
+    <section class="neighborhoods reveal">
+        <h2>Recommended Neighborhoods</h2>
+        
+        <p style="text-align: center; margin-bottom: 3rem; color: #666;">
+            If you'd like to stay together as a group, have a more independent stay, or turn the trip into a longer getaway, explore these neighborhoods near our venue.
+        </p>
+
+        <div class="neighborhood-grid">
+            <div class="neighborhood-card reveal">
+                <h4>⏱️ Burnham Park / Session Road</h4>
+                <div class="distance">2.3 km | 8 min drive</div>
+                <p><strong>Best for short stays</strong></p>
+                <p>Shortest commute to Hotel Supreme • Very walkable: parks, cafes, restaurants, Public Market • Good public transport and taxi availability</p>
             </div>
-            <a href="https://maps.google.com" target="_blank" class="map-button">Open in Google Maps</a>
+
+            <div class="neighborhood-card reveal">
+                <h4>💑 Camp John Hay</h4>
+                <div class="distance">3.6 km | 11 min drive</div>
+                <p><strong>Best for couples</strong></p>
+                <p>Tourist-friendly with scenic walking trails • Many mid-size hotels, chalets and condos • Short taxi ride to venue; calmer evenings</p>
+            </div>
+
+            <div class="neighborhood-card reveal">
+                <h4>🏡 Mines View / Wright Park</h4>
+                <div class="distance">1.3 km | 20 min walk</div>
+                <p><strong>Best for families</strong></p>
+                <p>Close to scenic attractions • Mix of guesthouses and small hotels • Short drive (10–20 mins) to venue; quieter atmosphere</p>
+            </div>
+
+            <div class="neighborhood-card reveal">
+                <h4>📅 Teachers Camp / Loakan</h4>
+                <div class="distance">1.7 km | 4 min drive</div>
+                <p><strong>Best for long stays</strong></p>
+                <p>More spacious properties and quieter evenings • Good road access to venue • Greater privacy and on-site parking</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venue & Directions -->
+    <section id="venue" class="venue reveal">
+        <h2>Venue & Directions</h2>
+        
+        <div class="venue-card">
+            <h3>Supreme Hotel, Baguio</h3>
+            <p style="margin-bottom: 1.5rem; font-size: 0.95rem; color: #666;">
+                113 Magsaysay Avenue, Baguio City, 2600 Benguet
+            </p>
+
+            <div class="venue-info">
+                <h4>🚗 If You're Driving:</h4>
+                <p>Simply enter "Supreme Hotel Baguio" in Google Maps or Waze. The hotel is located along Magsaysay Avenue, one of Baguio City's main roads, and is easy to find.</p>
+            </div>
+
+            <div class="venue-info">
+                <h4>🚌 If You're Taking Public Transportation:</h4>
+                <p><strong>From Victory Liner or Genesis Bus Terminal:</strong> The venue is about 10–15 minutes away by taxi (depending on traffic).</p>
+                <p><strong>From SM City Baguio or Session Road:</strong> It's approximately 10–15 minutes by taxi or ride-hailing service.</p>
+            </div>
+
+            <div class="venue-info">
+                <h4>🅿️ Parking</h4>
+                <p>Parking is available at the hotel. If the parking area becomes full, nearby parking options may also be available.</p>
+            </div>
+
+            <div class="contact-info">
+                <p><strong>Website:</strong> <a href="https://www.hotelsupreme.com.ph" target="_blank">hotelsupreme.com.ph</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+63742445377">(074) 244 5377</a></p>
+                <p><strong>Address:</strong> 113 Magsaysay Avenue, Baguio, Benguet, Philippines</p>
+            </div>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(125, 29, 29, 0.1); border-radius: 8px; text-align: center;">
+                <p><strong>Helpful Tip:</strong> Baguio traffic can be heavier on weekends and holidays, so we kindly recommend leaving a little earlier to ensure you arrive on time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weather & Dress Code -->
+    <section class="weather reveal">
+        <h2>What to Expect</h2>
+        
+        <div class="weather-card">
+            <h4>🌧️ Weather in Baguio</h4>
+            <p>
+                On September 19, 2026, Baguio City is expected to experience typical late-rainy season weather, with temperatures ranging from a high of 72°F to 76°F (22°C to 24°C) during the day and overnight lows between 63°F and 68°F (17°C to 20°C).
+            </p>
+            <p>
+                <strong>Morning:</strong> Mostly cloudy with a cool, misty feel (temperatures near 19°C).<br>
+                <strong>Afternoon:</strong> Overcast skies with a 60% to 90% chance of showers or thunderstorms.<br>
+                <strong>Night:</strong> Chilly and damp; bring a light jacket as temperatures drop.
+            </p>
+            <p>
+                We recommend bringing a light jacket and an umbrella so you'll be comfortable throughout the day. Since both our ceremony and reception will be held indoors at Hotel Supreme, we can celebrate rain or shine! ☔❤️
+            </p>
+        </div>
+
+        <div class="weather-card" style="margin-top: 2rem;">
+            <h4>👗 Dress Code</h4>
+            <p>
+                <strong>Rehearsal & Rehearsal Dinner (Friday):</strong> Cocktail Attire<br>
+                <strong>Ceremony & Reception (Saturday):</strong> Cocktail Attire
+            </p>
+            <p style="margin-top: 1rem;">
+                <strong>Ladies:</strong> Please skip the stilettos—seriously! There's a lot of grass and uneven ground, so go for block heels or sandals instead. We don't want anyone ruining their shoes or twisting an ankle.
+            </p>
+        </div>
+    </section>
+
+    <!-- Wedding Party -->
+    <section id="party" class="wedding-party reveal">
+        <h2>Wedding Party</h2>
+        
+        <div class="party-grid">
+            <div class="party-member reveal">
+                <div class="party-avatar">👰</div>
+                <h4>Noemi D. Domingo</h4>
+                <p class="party-role">Maid of Honor</p>
+            </div>
+
+            <div class="party-member reveal">
+                <div class="party-avatar">🤵</div>
+                <h4>Paul Rey M. Capalad</h4>
+                <p class="party-role">Best Man</p>
+            </div>
+
+            <div class="party-member reveal">
+                <div class="party-avatar">JB</div>
+                <h4>Janille Batulan</h4>
+                <p class="party-role">Bridesmaid</p>
+            </div>
+
+            <div class="party-member reveal">
+                <div class="party-avatar">JR</div>
+                <h4>Jeff Racelis</h4>
+                <p class="party-role">Groomsman</p>
+            </div>
+
+            <div class="party-member reveal">
+                <div class="party-avatar">AL</div>
+                <h4>Audreylyn Leaño</h4>
+                <p class="party-role">Bridesmaid</p>
+            </div>
+
+            <div class="party-member reveal">
+                <div class="party-avatar">AI</div>
+                <h4>Amiel Ignacio</h4>
+                <p class="party-role">Groomsman</p>
+            </div>
+
+            <div class="party-member reveal">
+                <div class="party-avatar">JS</div>
+                <h4>Jeralbeth Soria</h4>
+                <p class="party-role">Bridesmaid</p>
+            </div>
+
+            <div class="party-member reveal">
+                <div class="party-avatar">TM</div>
+                <h4>Teejay Magpantay</h4>
+                <p class="party-role">Groomsman</p>
+            </div>
+
+            <div class="party-member reveal">
+                <div class="party-avatar">FC</div>
+                <h4>Fatima Castillo</h4>
+                <p class="party-role">Bridesmaid</p>
+            </div>
+
+            <div class="party-member reveal">
+                <div class="party-avatar">DC</div>
+                <h4>Daniell Caraig</h4>
+                <p class="party-role">Groomsman</p>
+            </div>
+
+            <div class="party-member reveal">
+                <div class="party-avatar">MM</div>
+                <h4>Mina Marie Magpantay</h4>
+                <p class="party-role">Bridesmaid</p>
+            </div>
+
+            <div class="party-member reveal">
+                <div class="party-avatar">BK</div>
+                <h4>Brandon Kison</h4>
+                <p class="party-role">Groomsman</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Q&A Section -->
+    <section id="qa" class="qa reveal">
+        <h2>Questions & Answers</h2>
+        
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div class="qa-item reveal">
+                <h4>
+                    What's the RSVP deadline?
+                    <span class="qa-toggle">▼</span>
+                </h4>
+                <div class="qa-answer">
+                    Please RSVP by August 22 so we can get an accurate headcount. :)
+                </div>
+            </div>
+
+            <div class="qa-item reveal">
+                <h4>
+                    Can I bring a guest?
+                    <span class="qa-toggle">▼</span>
+                </h4>
+                <div class="qa-answer">
+                    Check your invitation to see if you have a plus one.
+                </div>
+            </div>
+
+            <div class="qa-item reveal">
+                <h4>
+                    Are kids welcome?
+                    <span class="qa-toggle">▼</span>
+                </h4>
+                <div class="qa-answer">
+                    We love your little ones, but the ceremony and reception are adults-only. We know some of you will be traveling with kids, so they're welcome at the Friday cocktail reception and Sunday brunch! We'll also offer babysitting at the venue during the ceremony if you need it. Please reach out if you have any questions!
+                </div>
+            </div>
+
+            <div class="qa-item reveal">
+                <h4>
+                    Where can I park?
+                    <span class="qa-toggle">▼</span>
+                </h4>
+                <div class="qa-answer">
+                    Parking is available at the Hotel.
+                </div>
+            </div>
+
+            <div class="qa-item reveal">
+                <h4>
+                    Are the ceremony and reception areas wheelchair accessible?
+                    <span class="qa-toggle">▼</span>
+                </h4>
+                <div class="qa-answer">
+                    Yes! We'll also have a cart available for anyone who needs help getting around the property.
+                </div>
+            </div>
+
+            <div class="qa-item reveal">
+                <h4>
+                    What should I wear?
+                    <span class="qa-toggle">▼</span>
+                </h4>
+                <div class="qa-answer">
+                    See our Schedule section for dress code details.
+                </div>
+            </div>
+
+            <div class="qa-item reveal">
+                <h4>
+                    What shoes should I wear (or avoid)?
+                    <span class="qa-toggle">▼</span>
+                </h4>
+                <div class="qa-answer">
+                    Ladies, please skip the stilettos—seriously! There's a lot of grass and uneven ground, so go for block heels or sandals instead. We don't want anyone ruining their shoes or twisting an ankle.
+                </div>
+            </div>
+
+            <div class="qa-item reveal">
+                <h4>
+                    Can we use our phones and cameras to take photos during the wedding?
+                    <span class="qa-toggle">▼</span>
+                </h4>
+                <div class="qa-answer">
+                    Absolutely! We'd love for you to take photos and share them on our app! We just ask that you don't take photos during the ceremony.
+                </div>
+            </div>
+
+            <div class="qa-item reveal">
+                <h4>
+                    Who should I contact if I have questions?
+                    <span class="qa-toggle">▼</span>
+                </h4>
+                <div class="qa-answer">
+                    If you have any questions, feel free to contact our amazing Coordinator, Zarell Acarvia.
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1058,18 +1239,13 @@
         <p>To celebrate our forever</p>
         <p>With all of you by our side</p>
         <p style="margin-top: 2rem;">See you in Baguio.</p>
-        <div style="font-size: 3rem; margin: 2rem 0;">♡</div>
-        <p class="closing-signature">Jose Ernesto & Fynee</p>
+        <div style="font-size: 3rem; margin: 2rem 0;">💕</div>
+        <p style="font-size: 1.3rem; margin: 1rem 0;">Jose Ernesto & Fynee</p>
         
-        <a href="https://withjoy.com/joseernesto-and-fynee/" target="_blank" class="rsvp-link">
+        <a href="https://withjoy.com/joseernesto-and-fynee/" target="_blank" class="rsvp-button" style="color: var(--primary); border-color: var(--primary); margin-top: 2rem;">
             RSVP via WithJoy
         </a>
     </section>
-
-    <!-- Music Player -->
-    <div class="music-player" id="musicPlayer" title="Click to play">
-        <span class="music-icon">🎵</span>
-    </div>
 
     <!-- Footer -->
     <footer>
@@ -1083,15 +1259,17 @@
             const now = new Date().getTime();
             const distance = weddingDate - now;
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            if (distance > 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            document.getElementById('days').textContent = days;
-            document.getElementById('hours').textContent = hours;
-            document.getElementById('minutes').textContent = minutes;
-            document.getElementById('seconds').textContent = seconds;
+                document.getElementById('days').textContent = days;
+                document.getElementById('hours').textContent = hours;
+                document.getElementById('minutes').textContent = minutes;
+                document.getElementById('seconds').textContent = seconds;
+            }
         }
 
         updateCountdown();
@@ -1110,51 +1288,15 @@
             observer.observe(el);
         });
 
-        // Count Up Numbers
-        function countUpNumbers() {
-            const numbers = document.querySelectorAll('.count-number');
-            const observerCount = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
-                        entry.target.classList.add('counted');
-                        const target = parseInt(entry.target.getAttribute('data-target'));
-                        const duration = 2000;
-                        const increment = target / (duration / 16);
-                        let current = 0;
+        // Q&A Toggle
+        document.querySelectorAll('.qa-item h4').forEach(button => {
+            button.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const toggle = this.querySelector('.qa-toggle');
 
-                        const counter = setInterval(() => {
-                            current += increment;
-                            if (current >= target) {
-                                entry.target.textContent = target + '+';
-                                clearInterval(counter);
-                            } else {
-                                entry.target.textContent = Math.floor(current) + '+';
-                            }
-                        }, 16);
-                    }
-                });
-            }, { threshold: 0.5 });
-
-            numbers.forEach(num => observerCount.observe(num));
-        }
-
-        countUpNumbers();
-
-        // Music Player
-        let isPlaying = false;
-        const audio = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
-        audio.volume = 0.3;
-
-        document.getElementById('musicPlayer').addEventListener('click', function() {
-            if (isPlaying) {
-                audio.pause();
-                this.style.background = 'rgba(26, 26, 26, 0.9)';
-                isPlaying = false;
-            } else {
-                audio.play();
-                this.style.background = 'rgba(212, 175, 55, 0.9)';
-                isPlaying = true;
-            }
+                answer.classList.toggle('active');
+                toggle.classList.toggle('active');
+            });
         });
 
         // Smooth Scroll
