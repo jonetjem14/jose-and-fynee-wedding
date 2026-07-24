@@ -252,8 +252,6 @@
 
         .gallery-item {
             position: relative;
-            width: 70%;
-            margin: 0 auto;
             aspect-ratio: 3/4;
             border-radius: 10px;
             overflow: hidden;
